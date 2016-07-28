@@ -2,7 +2,7 @@
 *Onionscan in a Docker container*
 Based on https://github.com/s-rah/onionscan.
 
-> The purpose of this tool is to make you a better onion service provider. You owe it to yourself and your users to ensure that attackers > cannot easily exploit and deanonymize.
+> The purpose of this tool is to make you a better onion service provider. You owe it to yourself and your users to ensure that attackers cannot easily exploit and deanonymize.
 
 Run the container like so:
 ```
