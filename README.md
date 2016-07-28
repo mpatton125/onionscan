@@ -1,5 +1,5 @@
 # onionscan
-Onionscan in a Docker container
+*Onionscan in a Docker container*
 
 Based on https://github.com/s-rah/onionscan.
 
