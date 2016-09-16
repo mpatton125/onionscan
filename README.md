@@ -1,3 +1,5 @@
+[![](https://images.microbadger.com/badges/image/mpatton/onionscan.svg)](https://microbadger.com/images/mpatton/onionscan "Get your own image badge on microbadger.com")
+
 # onionscan
 *Onionscan in a Docker container*
 Based on https://github.com/s-rah/onionscan.
