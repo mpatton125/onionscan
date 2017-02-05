@@ -1,14 +1,14 @@
 [![](https://images.microbadger.com/badges/image/mpatton/onionscan.svg)](https://microbadger.com/images/mpatton/onionscan "Get your own image badge on microbadger.com")
 
-# onionscan
-*Onionscan in a Docker container*
+# OnionScan
+*OnionScan in a Docker container*
 Based on https://github.com/s-rah/onionscan.
 
 > The purpose of this tool is to make you a better onion service provider. You owe it to yourself and your users to ensure that attackers cannot easily exploit and deanonymize.
 
 Run the container like so:
 ```
-docker run -d --name onionscan mpatton/onionscan
+docker run -d --cap-drop=all --name onionscan mpatton/onionscan
 ```
 
 This will startup the Tor connection and allow you to do the following:
