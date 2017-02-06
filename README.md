@@ -33,6 +33,7 @@ function onionscan(){
 	then
 		docker exec -it onionscan onionscan $@
 	else
+		docker rm $(docker ps -a | grep "onionscan" | cut -d " " -f1)
 		docker run -d --cap-drop=all --name onionscan mpatton/onionscan
 		docker exec -it onionscan onionscan $@
 	fi
