@@ -18,8 +18,29 @@ docker exec -it onionscan onionscan <options> <onion address>
 
 See https://github.com/s-rah/onionscan for further information.
 
---- 
+---
 Note:  Run the following to make sure Tor has fully started, prior to running your scan:
 ```
 docker logs -f onionscan
+```
+
+---
+For a bash function to automate the process of pulling and starting the onionscan daemon container add the following to your `.bashrc`:
+```bash
+function onionscan(){
+	onionscanrunning=$(docker inspect --format "{{.State.Running}}" onionscan 2>/dev/null)
+	if [ "$onionscanrunning" == "true" ]
+	then
+		docker exec -it onionscan onionscan $@
+	else
+		docker rm $(docker ps -a | grep "onionscan" | cut -d " " -f1)
+		docker run -d --cap-drop=all --name onionscan mpatton/onionscan
+		docker exec -it onionscan onionscan $@
+	fi
+}
+```
+
+Using the above function will allow you to run `onionscan` as if it were installed natively. Now you can simply use the following syntax in a terminal:
+```
+onionscan <options> <onion address>
 ```
